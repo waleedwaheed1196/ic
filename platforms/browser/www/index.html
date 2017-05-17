@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="styles/ionicons.min.css">
 
 
-<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/plugins.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
   
@@ -174,7 +174,7 @@ Email
 </div>
 
 
-
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
 
 <script type="text/javascript">
 	
@@ -242,12 +242,12 @@ Email
 		}
 		if(c_id==0)
 		{
-		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?email="+email);	
+		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php");	
 		}
 		else
 		{
 		//alert("check");
-		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?c_id="+c_id+"&email="+email); 
+		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?c_id="+c_id); 
 		}
 	}
 	
