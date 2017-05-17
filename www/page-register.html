@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<title>Islamabad Chicken</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/skin.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link rel="stylesheet" type="text/css" href="styles/ionicons.min.css">
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+    $(document).ready(function (e) {
+       $( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php");    
+	});
+</script>
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+
+		<script>
+
+$(document).ready(function (e) {
+$("#userForm").on('submit',(function(e) {
+e.preventDefault();
+$('#response').show();
+$("#loader").show();
+$.ajax({
+url: "http://islamabadchicken.com/reg_save_app.php", // Url to which the request is send
+type: "POST",             // Type of request to be send, called as method
+data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false,        // To send DOMDocument or non processed data file it is set to false
+success: function(data)   // A function to be called if request succeeds
+{
+$("#loader").hide();
+//$('#userForm')[0].reset();
+$("#response").html(data);
+}
+});
+
+}));
+});
+
+
+</script>
+
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementById("password1").onchange = validatePassword;
+	document.getElementById("password2").onchange = validatePassword;
+}
+function validatePassword(){
+var pass2=document.getElementById("password2").value;
+var pass1=document.getElementById("password1").value;
+if(pass1!=pass2)
+	document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+else
+	document.getElementById("password2").setCustomValidity('');	 
+//empty string means no validation error
+}
+</script>
+
+</head>
+<body>
+<div id="page-transitions">
+
+<div class="sidebars sidebars-light" id="sidebar">
+
+</div>
+
+<div class="header header-logo-center header-dark">
+<a href="#" class="header-icon header-icon-1 hamburger-animated open-sidebar-left"></a>
+<a class="header-logo"></a>
+<a href="#" class="header-icon header-icon-4 open-sidebar-right"><i class="ion-ios-email-outline"></i></a>
+</div>
+<div id="page-content" class="page-content">
+<div id="page-content-scroll" class="header-clear"> 
+<div class="page-login content">
+<a href="#" class="page-login-logo"><img class="preload-image" data-original="images/preload-logo.png" alt="img"></a>
+
+<form id="userForm" method="post" >
+
+<div class="page-login-input">
+<i class="login-icon ion-person"></i>
+<input type="text" value="Name" name="name" onfocus="if (this.value=='Name') this.value = ''" onblur="if (this.value=='') this.value = 'Name'">
+</div>
+<div class="page-login-input">
+<i class="login-icon ion-at"></i>
+<input type="email" name="email" value="Email" onfocus="if (this.value=='Email') this.value = ''" onblur="if (this.value=='') this.value = 'Email'">
+</div>
+<div class="page-login-input">
+<i class="login-icon ion-ios-telephone"></i>
+<input type="text" class="form-control" placeholder="Phone" name="contact" pattern="[0]{1}[3]{1}[0-9]{9}" maxlength="11" title="e.g. 03331234567" id="form-phone" data-error="Phone field is required" required />
+</div>
+<div class="page-login-input">
+<i class="login-icon ion-ios-location"></i>
+<input type="text" class="form-control" placeholder="Address" name="address" id="form-name" data-error="Address field is required" required />
+</div>
+<div class="page-login-input full-bottom">
+<i class="login-icon ion-locked"></i>
+<input type="password" value="" placeholder="Password" name="pwd" id="password1" onfocus="if (this.value=='password') this.value = ''" onblur="if (this.value=='') this.value = 'password'">
+</div>
+<div class="page-login-input full-bottom">
+<i class="login-icon ion-locked"></i>
+<input type="password" value="" placeholder=" Confirm Password" name="cpwd" id="password2" onfocus="if (this.value=='password') this.value = ''" onblur="if (this.value=='') this.value = 'password'">
+</div>
+<input type="submit" class="button button-green button-icon button-full half-top full-bottom" value="Create Account" />
+<div class="decoration"></div>
+
+</form>
+
+ <span id="response">
+
+</span>	
+
+<a href="#" class="button button-icon button-full facebook-bg"><i class="ion-social-facebook"></i>Signup with Facebook</a>
+<a href="#" class="button button-icon button-full twitter-bg"><i class="ion-social-twitter"></i>Signup with Twitter</a>
+<a href="#" class="button button-icon button-full google-bg"><i class="ion-social-googleplus"></i>Signup with Google +</a>
+<div class="decoration full-top"></div>
+<a href="page-login.html" class="button button-blue button-icon button-full half-top full-bottom"><i class="ion-person"></i>Login Here</a>
+</div>
+<div class="decoration decoration-margins"></div>
+<div class="footer footer-dark">
+<a class="footer-logo"></a>
+<p class="footer-text">
+Islamabad Chicken is a chain of high-quality stores providing fresh ,healthy and hygienic chicken everyday. Islamabad Chicken’s innovation and efforts to maintain consistency, highest quality and hygienic standards is trademark in the industry.
+</p>
+<div class="footer-socials">
+<a href="#"><i class="ion-social-facebook"></i></a>
+<a href="#"><i class="ion-social-instagram-outline"></i></a>
+<a href="#"><i class="ion-social-youtube-outline"></i></a>
+<a href="#"><i class="ion-social-twitter"></i></a>
+</div>
+<p class="copyright-text">&copy; Copyright <span class="copyright-year"></span> 2017 Islamabad Chicken. All Rights Reserved.  </p>
+</div>
+</div>
+</div>
+<a href="#" class="back-to-top-badge"><i class="ion-ios-arrow-up"></i></a>
+<div class="share-bottom share-light">
+<h3>Share Page</h3>
+<div class="share-socials-bottom">
+<a href="#">
+<i class="ion-social-facebook facebook-bg"></i>
+Facebook
+</a>
+<a href="#">
+<i class="ion-social-twitter twitter-bg"></i>
+Twitter
+</a>
+<a href="#">
+<i class="ion-social-googleplus google-bg"></i>
+Google
+</a>
+
+<a href="sms:">
+<i class="ion-ios-chatboxes-outline sms-bg"></i>
+Text
+</a>
+<a href="#">
+<i class="ion-ios-email-outline mail-bg"></i>
+Email
+</a>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</body>

@@ -1,0 +1,37 @@
+page-login.html
+page-register.html
+store-cart-1.html
+view-cart.html
+index.html
+checkout.html		-- url
+profile.html		-- url	
+order-history.html
+
+IC
+
+product_get_test.php
+login_save.php		-- url
+sidebar_app.php
+product_sel_app.php
+view_cart.php
+cart_save.php
+cart_get.php
+update_cart.php
+reg_save_app.php
+cart_load_app.php
+checkout_form_app.php  	-- url
+checkout_save_app.php
+checkout_save.php
+checkout_load_app.php
+profile_form_app.php
+profile_save_app.php
+order_history_app.php
+logout_app.php
+
+Admin
+
+admin/functions.php
+
+images
+
+cart.png

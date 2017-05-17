@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Islamabad Chicken</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/skin.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link rel="stylesheet" type="text/css" href="styles/ionicons.min.css">
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+    $(document).ready(function (e) {
+       $( "#sidebar" ).load( "http://127.0.0.1:8888/islamabadchicken/sidebar_app.php");    
+	});
+</script>
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+	
+</head>
+<body>
+<div id="page-transitions">
+
+<div class="sidebars sidebars-light" id="sidebar">
+
+
+</div>
+
+<div class="header header-logo-center header-dark">
+<a href="#" class="header-icon header-icon-1 hamburger-animated open-sidebar-left"></a>
+<a href="index.html" class="header-logo"></a>
+<a href="#" class="header-icon header-icon-4 open-sidebar-right"><i class="ion-ios-email-outline"></i></a>
+</div>
+<div id="page-content" class="page-content">
+<div id="page-content-scroll"> 
+<div class="page-fullscreen vertical-bg-0">
+<div class="page-fullscreen-content">
+<div class="pageapp-login">
+<a href="#" class="pageapp-login-logo">
+<img src="images/preload-logo.png" alt="img">
+</a>
+
+<form id="userForm" method="post" >
+
+<div class="page-login-input">
+<i class="login-icon ion-person"></i>
+<input type="email" name="email" value="Email" onfocus="if (this.value=='Email') this.value = ''" onblur="if (this.value=='') this.value = 'Email'">
+</div>
+<div class="page-login-input">
+<i class="login-icon ion-android-lock"></i>
+<input type="password" name="password" value="password" onfocus="if (this.value=='password') this.value = ''" onblur="if (this.value=='') this.value = 'password'">
+</div>
+
+
+<div class="page-login-links">
+<a href="#" class="page-login-forgot"><i class="ion-ios-eye"></i>Forgot Credentials</a>
+<a href="page-register.html" class="page-login-create">Create Account<i class="ion-log-in"></i></a>
+<div class="clear"></div>
+</div>
+<input type="submit" class="button button-green button-icon button-full half-top full-bottom" value="Login" />
+
+</form>
+
+<div class="pageapp-login-social">
+<div class="decoration"></div>
+<a href="#" class="button button-icon button-full facebook-bg"><i class="ion-social-facebook"></i>Login with Facebook</a>
+<a href="#" class="button button-icon button-full twitter-bg"><i class="ion-social-twitter"></i>Login with Facebook</a>
+</div>
+</div>
+</div>
+<div class="overlay dark-overlay"></div>
+</div>
+</div>
+</div>
+</div>
+</body>

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Islamabad Chicken</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/skin.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link rel="stylesheet" type="text/css" href="styles/ionicons.min.css">
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+  
+</head>
+<body>
+<div id="page-transitions">
+
+<div class="sidebars sidebars-light" id="sidebar">
+
+
+</div>
+
+<div class="header header-logo-center header-dark">
+<a href="#" class="header-icon header-icon-1 hamburger-animated open-sidebar-left"></a>
+<a class="header-logo"></a>
+<a href="#" class="header-icon header-icon-4 open-sidebar-right"><i class="ion-ios-email-outline"></i></a>
+</div>
+<div id="page-content" class="page-content">
+<div id="page-content-scroll" class="header-clear"> 
+<div class="heading-strip bg-1">
+<h3>Profile Information</h3>
+<p></p>
+<i class="ion-person"></i>
+<div class="overlay dark-overlay"></div>
+</div>
+
+<div class="decoration decoration-margins"></div>
+<div class="content">
+
+<div class="store-cart-1" >
+<div class="cart-costs" id="get_product">
+
+</div>
+</div>
+
+
+<div class="page-login content">
+<h4 style="text-align:center;">   </h4>
+<form id="userForm" method="post" >
+
+
+</form>
+
+ <span id="response">
+
+</span>	
+
+</div>
+
+
+
+</div>
+<div class="decoration decoration-margins"></div>
+<div class="footer footer-dark">
+<a class="footer-logo"></a>
+<p class="footer-text">
+Islamabad Chicken is a chain of high-quality stores providing fresh ,healthy and hygienic chicken everyday. Islamabad Chicken’s innovation and efforts to maintain consistency, highest quality and hygienic standards is trademark in the industry.
+</p>
+<div class="footer-socials">
+<a href="#"><i class="ion-social-facebook"></i></a>
+<a href="#"><i class="ion-social-instagram-outline"></i></a>
+<a href="#"><i class="ion-social-youtube-outline"></i></a>
+<a href="#"><i class="ion-social-twitter"></i></a>
+</div>
+<p class="copyright-text">&copy; Copyright <span class="copyright-year"></span> 2017 Islamabad Chicken. All Rights Reserved.  </p>
+</div>
+</div>
+</div>
+<a href="#" class="back-to-top-badge"><i class="ion-ios-arrow-up"></i></a>
+<div class="share-bottom share-light">
+<h3>Share Page</h3>
+<div class="share-socials-bottom">
+<a href="#">
+<i class="ion-social-facebook facebook-bg"></i>
+Facebook
+</a>
+<a href="#">
+<i class="ion-social-twitter twitter-bg"></i>
+Twitter
+</a>
+<a href="#">
+<i class="ion-social-googleplus google-bg"></i>
+Google
+</a>
+
+<a href="sms:">
+<i class="ion-ios-chatboxes-outline sms-bg"></i>
+Text
+</a>
+<a href="#">
+<i class="ion-ios-email-outline mail-bg"></i>
+Email
+</a>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+
+<script>
+//function confirmSubmit() {
+  	
+$(document).ready(function (e) {
+$("#userForm").on('submit',(function(e) {
+	
+ e.preventDefault();
+$('#response').show();
+$("#loader").show();
+$.ajax({
+url: "http://islamabadchicken.com/profile_save_app.php", // Url to which the request is send
+type: "POST",             // Type of request to be send, called as method
+data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false,        // To send DOMDocument or non processed data file it is set to false
+success: function(data)   // A function to be called if request succeeds
+{
+$("#loader").hide();
+//$('#userForm')[0].reset();
+$("#response").html(data);
+ setInterval(function(){
+    
+       $( "#response" ).hide();
+    
+}, 5000); 
+
+}
+}); 
+
+}));
+});
+
+//}
+
+
+//}
+
+</script>
+
+<script type="text/javascript">
+	
+	
+	$(document).ready(function () {
+       $( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php");
+		$( "#userForm" ).load( "http://islamabadchicken.com/profile_form_app.php");	   
+	});
+	
+	
+	//};
+	
+  </script>
+
+
+
+</body>
+</html>
