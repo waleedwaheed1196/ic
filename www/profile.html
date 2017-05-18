@@ -251,6 +251,10 @@ $("#response").html(data);
     }
 	
 	$(document).ready(function () {
+		history.pushState(null, null, document.URL);
+		window.addEventListener('popstate', function () {
+		history.pushState(null, null, document.URL);
+		});
 		if (window.location.toString().includes("?")) 
 		{
 		var email = getUrlParameters("email", "", true);

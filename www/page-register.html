@@ -16,37 +16,7 @@
 <script type="text/javascript" src="scripts/plugins.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
 
-		<script>
-
-$(document).ready(function (e) {
-$("#userForm").on('submit',(function(e) {
-e.preventDefault();
-$('#response').show();
-$("#loader").show();
-$.ajax({
-url: "http://islamabadchicken.com/reg_save_app.php", // Url to which the request is send
-type: "POST",             // Type of request to be send, called as method
-data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-contentType: false,       // The content type used when sending data to the server.
-cache: false,             // To unable request pages to be cached
-processData:false,        // To send DOMDocument or non processed data file it is set to false
-success: function(data)   // A function to be called if request succeeds
-{
-$("#loader").hide();
-//$('#userForm')[0].reset();
-$("#response").html(data);
-}
-});
-
-}));
-});
-
-
-    $(document).ready(function (e) {
-       $( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php");    
-	   $( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php");
-	});
-</script>
+	
 
 <script type="text/javascript">
 window.onload = function () {
@@ -246,5 +216,43 @@ Email
 </div>
 </div>
 </div>
+
+	<script>
+
+$(document).ready(function (e) {
+$("#userForm").on('submit',(function(e) {
+e.preventDefault();
+$('#response').show();
+$("#loader").show();
+$.ajax({
+url: "http://islamabadchicken.com/reg_save_app.php", // Url to which the request is send
+type: "POST",             // Type of request to be send, called as method
+data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false,        // To send DOMDocument or non processed data file it is set to false
+success: function(data)   // A function to be called if request succeeds
+{
+$("#loader").hide();
+//$('#userForm')[0].reset();
+$("#response").html(data);
+}
+});
+
+}));
+});
+
+
+    $(document).ready(function (e) {
+		history.pushState(null, null, document.URL);
+		window.addEventListener('popstate', function () {
+		history.pushState(null, null, document.URL);
+		});
+       $( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php");    
+	   $( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php");
+	});
+</script>
+
+
 </body>
 </html>
