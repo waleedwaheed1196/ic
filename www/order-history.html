@@ -11,52 +11,10 @@
 <link rel="stylesheet" type="text/css" href="styles/framework.css">
 <link rel="stylesheet" type="text/css" href="styles/ionicons.min.css">
 
-<script type="text/javascript" src="scripts/jquery.min.js"></script>
-
-
-<script type="text/javascript">
-	
-	function getUrlParameters(parameter, staticURL, decode){
-
-       var currLocation = (staticURL.length)? staticURL : window.location.search,
-           parArr = currLocation.split("?")[1].split("&"),
-           returnBool = true;
-
-       for(var i = 0; i < parArr.length; i++){
-            parr = parArr[i].split("=");
-            if(parr[0] == parameter){
-                return (decode) ? decodeURIComponent(parr[1]) : parr[1];
-                returnBool = true;
-            }else{
-                returnBool = false;            
-            }
-       }
-
-       if(!returnBool) return false;  
-    }
-	
-	$(document).ready(function () {
-		history.pushState(null, null, document.URL);
-		window.addEventListener('popstate', function () {
-		history.pushState(null, null, document.URL);
-		});
-		if (window.location.toString().includes("?")) 
-	   {
-			var email = getUrlParameters("email", "", true);
-			$( "#drop" ).load( "http://islamabadchicken.com/order_history_app.php?email="+email);
-			$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php?email="+email);
-			$( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php?email="+email);
-			document.getElementById("index").href="index.html?email="+email;
-	   }
-	   else
-	   {
-	   
-	   }
-	});	
-		
-	//};
-	
-  </script>
+ 
+<script type="text/javascript" src="http://islamabadchicken.com/scripts/plugins.js"></script>
+<script type="text/javascript" src="http://islamabadchicken.com/scripts/custom.js"></script>
+<script type="text/javascript" src="http://islamabadchicken.com/scripts/jquery.js"></script>
 
     <style>
 .sk-circle {
@@ -348,6 +306,53 @@ Email
 </div>
 </div>
 </div>
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+	
+	function getUrlParameters(parameter, staticURL, decode){
+
+       var currLocation = (staticURL.length)? staticURL : window.location.search,
+           parArr = currLocation.split("?")[1].split("&"),
+           returnBool = true;
+
+       for(var i = 0; i < parArr.length; i++){
+            parr = parArr[i].split("=");
+            if(parr[0] == parameter){
+                return (decode) ? decodeURIComponent(parr[1]) : parr[1];
+                returnBool = true;
+            }else{
+                returnBool = false;            
+            }
+       }
+
+       if(!returnBool) return false;  
+    }
+	
+	$(document).ready(function () {
+		history.pushState(null, null, document.URL);
+		window.addEventListener('popstate', function () {
+		history.pushState(null, null, document.URL);
+		});
+		if (window.location.toString().includes("?")) 
+	   {
+			var email = getUrlParameters("email", "", true);
+			$( "#drop" ).load( "http://islamabadchicken.com/order_history_app.php?email="+email);
+			$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php?email="+email);
+			$( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php?email="+email);
+			document.getElementById("index").href="index.html?email="+email;
+	   }
+	   else
+	   {
+	   
+	   }
+	});	
+		
+	//};
+	
+  </script>
 
 
 </body>
