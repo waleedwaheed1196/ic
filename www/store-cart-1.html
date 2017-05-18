@@ -385,7 +385,20 @@ Email
 		if (window.location.toString().includes("?")) 
 		{
 		var email = getUrlParameters("email", "", true);
+		if(c_id==0)
+		{
+		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?email="+email);	
 		}
+		else
+		{
+		//alert("check");
+		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?c_id="+c_id+"&email="+email); 
+		}
+		
+		}
+		else
+		{
+		
 		if(c_id==0)
 		{
 		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php");	
@@ -395,6 +408,9 @@ Email
 		//alert("check");
 		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?c_id="+c_id); 
 		}
+		
+		}
+		
 	}
 	
   </script>

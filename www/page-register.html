@@ -244,12 +244,13 @@ $("#response").html(data);
 
 
     $(document).ready(function (e) {
+		$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php");    
+	   $( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php");
 		history.pushState(null, null, document.URL);
 		window.addEventListener('popstate', function () {
 		history.pushState(null, null, document.URL);
 		});
-       $( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php");    
-	   $( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php");
+       
 	});
 </script>
 
