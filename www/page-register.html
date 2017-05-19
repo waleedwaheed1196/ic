@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="styles/framework.css">
 <link rel="stylesheet" type="text/css" href="styles/ionicons.min.css">
 
-<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/plugins.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
 
@@ -128,7 +128,7 @@ else
 <div id="page-content" class="page-content">
 <div id="page-content-scroll" class="header-clear"> 
 <div class="page-login content">
-<a href="#" class="page-login-logo"><img class="preload-image" data-original="images/preload-logo.png" alt="img"></a>
+<a href="#" class="page-login-logo"><img class="preload-image" data-original="images/preload-logo.png" src="images/preload-logo.png" alt="img"></a>
 
 <form id="userForm" method="post" >
 
@@ -217,8 +217,8 @@ Email
 </div>
 </div>
 
-	<script>
-
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script>
 $(document).ready(function (e) {
 $("#userForm").on('submit',(function(e) {
 e.preventDefault();
