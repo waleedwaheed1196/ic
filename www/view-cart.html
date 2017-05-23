@@ -265,6 +265,27 @@
 </div>
 
 </div>
+
+<div class="one-half-responsive last-column">
+<h3>Change Delivery Address</h3>
+<p class="half-bottom">
+New Delivery Address
+</p>
+<div class="store-check-out-1 full-bottom">
+<form id="userForm" method="post" >
+
+
+
+</form>
+ <span id="response">
+
+</span>	
+
+</div>
+
+</div>
+
+
 <div class="decoration decoration-margins"></div>
 <div class="footer footer-dark">
 <a class="footer-logo"></a>
@@ -314,6 +335,85 @@ Email
 
 <script type="text/javascript" src="scripts/jquery.min.js"></script>
 
+
+<script>
+//function confirmSubmit() {
+  	
+$(document).ready(function (e) {
+$("#userForm").on('submit',(function(e) {
+
+var caddress = document.getElementById("caddress").value;
+//alert(caddress);
+
+if(caddress=="")
+{	
+
+
+if (confirm("Are you want to change your current delivery address ?")) {
+	
+	  return false;
+		//alert("TEST");
+  }
+else
+{
+	//alert("TESTSS");
+	
+ e.preventDefault();
+$('#response').show();
+$("#loader").show();
+$.ajax({
+url: "http://islamabadchicken.com/checkout_save_app.php", // Url to which the request is send
+type: "POST",             // Type of request to be send, called as method
+data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false,        // To send DOMDocument or non processed data file it is set to false
+success: function(data)   // A function to be called if request succeeds
+{
+$("#loader").hide();
+$('#userForm')[0].reset();
+$("#response").html(data);
+}
+}); 
+
+}
+
+}
+else
+	
+{
+
+ e.preventDefault();
+$('#response').show();
+$("#loader").show();
+$.ajax({
+url: "http://islamabadchicken.com/checkout_save_app.php", // Url to which the request is send
+type: "POST",             // Type of request to be send, called as method
+data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false,        // To send DOMDocument or non processed data file it is set to false
+success: function(data)   // A function to be called if request succeeds
+{
+$("#loader").hide();
+$('#userForm')[0].reset();
+$("#response").html(data);
+}
+});	
+	
+}
+
+
+}));
+});
+
+//}
+
+
+//}
+
+</script>
+
 <script type="text/javascript">
 	
 	
@@ -349,6 +449,7 @@ Email
 			$( "#get_product" ).load( "http://islamabadchicken.com/view_cart_app.php?o_id="+o_id+"&email="+email);  
 			$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php?email="+email);
 			$( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php?email="+email);
+			$( "#userForm" ).load( "http://islamabadchicken.com/checkout_form_app.php?o_id="+o_id+"&email="+email);
 			document.getElementById("index").href="index.html?email="+email;
 		}
 		else

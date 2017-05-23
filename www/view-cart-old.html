@@ -11,8 +11,6 @@
 <link rel="stylesheet" type="text/css" href="styles/framework.css">
 <link rel="stylesheet" type="text/css" href="styles/ionicons.min.css">
 
-<link rel="stylesheet" href="css/styles/css/style.css">
-<script src="js/PoppyPopup.js"></script>
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/plugins.js"></script>
@@ -230,7 +228,7 @@
 
 <div class="header header-logo-center header-dark">
 <a href="#" class="header-icon header-icon-1 hamburger-animated open-sidebar-left"></a>
-<a href="index.html" class="header-logo"></a>
+<a class="header-logo"></a>
 <a href="#" class="header-icon header-icon-4 open-sidebar-right"><i class="ion-ios-email-outline"></i></a>
 </div>
 <div id="page-content" class="page-content">
@@ -249,7 +247,6 @@
 <div class="content">
 <div class="store-cart-1" id="get_product">
 
-
 <div class="sk-circle">
   <div class="sk-circle1 sk-child"></div>
   <div class="sk-circle2 sk-child"></div>
@@ -264,7 +261,6 @@
   <div class="sk-circle11 sk-child"></div>
   <div class="sk-circle12 sk-child"></div>
 </div>
-
 
 </div>
 
@@ -320,6 +316,7 @@ Email
 
 <script type="text/javascript">
 	
+	
 	function getUrlParameters(parameter, staticURL, decode){
 
        var currLocation = (staticURL.length)? staticURL : window.location.search,
@@ -338,82 +335,30 @@ Email
 
        if(!returnBool) return false;  
     }
-	
-	 
+
 	
 	$(document).ready(function () {
 		history.pushState(null, null, document.URL);
 		window.addEventListener('popstate', function () {
 		history.pushState(null, null, document.URL);
 		});
-		
-	   if (window.location.toString().includes("?")) 
-	   {	
+		if (window.location.toString().includes("?")) 
+	   {
+			var o_id = getUrlParameters("o_id", "", true);
 			var email = getUrlParameters("email", "", true);
-			
-			if (typeof(Storage) !== "undefined") {
-				// Store
-				var ses_email = localStorage.setItem("email", email);
-				// Retrieve
-				//alert(ses_email);
-				var get_email = localStorage.getItem("email");
-				//alert(get_email);
-				//document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-			
-			} else {
-				console.log( "Sorry, your browser does not support Web Storage...");
-			}
-				
-			//alert(email);
+			$( "#get_product" ).load( "http://islamabadchicken.com/view_cart_app.php?o_id="+o_id+"&email="+email);  
 			$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php?email="+email);
-			$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?email="+email);
 			$( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php?email="+email);
 			document.getElementById("index").href="index.html?email="+email;
-			
-	   } 
-	   else 
-	   {
-			$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php");
+		}
+		else
+		{
 			$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php");
 			$( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php");
-	   }
-       
-	   $( "#pro_selection" ).load( "http://islamabadchicken.com/product_sel_app.php");	   
+		}
 	});
 	
-	
-	function product_get_test(c_id)
-	{
-		if (window.location.toString().includes("?")) 
-		{
-		var email = getUrlParameters("email", "", true);
-		if(c_id==0)
-		{
-		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?email="+email);	
-		}
-		else
-		{
-		//alert("check");
-		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?c_id="+c_id+"&email="+email); 
-		}
-		
-		}
-		else
-		{
-		
-		if(c_id==0)
-		{
-		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php");	
-		}
-		else
-		{
-		//alert("check");
-		$( "#get_product" ).load( "http://islamabadchicken.com/product_get_test.php?c_id="+c_id); 
-		}
-		
-		}
-		
-	}
+	//};
 	
   </script>
 

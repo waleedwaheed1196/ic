@@ -156,6 +156,11 @@ else
 <i class="login-icon ion-locked"></i>
 <input type="password" value="" placeholder=" Confirm Password" name="cpwd" id="password2" onfocus="if (this.value=='password') this.value = ''" onblur="if (this.value=='') this.value = 'password'">
 </div>
+
+<div id="regform">
+
+</div>
+
 <input type="submit" class="button button-green button-icon button-full half-top full-bottom" value="Create Account" />
 <div class="decoration"></div>
 
@@ -246,6 +251,7 @@ $("#response").html(data);
     $(document).ready(function (e) {
 		$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php");    
 	   $( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php");
+	   $( "#regform" ).load( "http://islamabadchicken.com/reg_form_app.php");
 		history.pushState(null, null, document.URL);
 		window.addEventListener('popstate', function () {
 		history.pushState(null, null, document.URL);
