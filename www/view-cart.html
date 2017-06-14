@@ -266,7 +266,9 @@
 
 </div>
 
+<div class="content">
 <div class="one-half-responsive last-column">
+
 
 <div class="store-check-out-1 full-bottom">
 <form id="userForm" method="post" >
@@ -280,6 +282,7 @@
 
 </div>
 
+</div>
 </div>
 
 
@@ -346,16 +349,10 @@ if(caddress=="")
 {	
 
 
-if (confirm("Are you want to change your current delivery address ?")) {
+//if (confirm("Are you want to change your current delivery address ?")) {
+if (confirm("Do you want to place your order ?")) {
 	
-	  return false;
-		//alert("TEST");
-  }
-else
-{
-	//alert("TESTSS");
-	
- e.preventDefault();
+	  e.preventDefault();
 $('#response').show();
 $("#loader").show();
 $.ajax({
@@ -371,7 +368,14 @@ $("#loader").hide();
 $('#userForm')[0].reset();
 $("#response").html(data);
 }
-}); 
+});
+		//alert("TEST");
+  }
+else
+{
+	//alert("TESTSS");
+	 return false;
+ 
 
 }
 
