@@ -11,12 +11,14 @@
 <link rel="stylesheet" type="text/css" href="styles/framework.css">
 <link rel="stylesheet" type="text/css" href="styles/ionicons.min.css">
 
- 
-<script type="text/javascript" src="http://islamabadchicken.com/scripts/plugins.js"></script>
-<script type="text/javascript" src="http://islamabadchicken.com/scripts/custom.js"></script>
-<script type="text/javascript" src="http://islamabadchicken.com/scripts/jquery.js"></script>
+<link rel="stylesheet" href="css/styles/css/style.css">
+<script src="js/PoppyPopup.js"></script>
 
-    <style>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+  
+  <style>
 .sk-circle {
   margin: 100px auto;
   width: 40px;
@@ -139,8 +141,7 @@
   }
 }
 </style>
-  
-  
+
 </head>
 <body>
 <div id="page-transitions">
@@ -184,9 +185,9 @@
 
 
 </div>
-<a href="#" style="display:none;"><i class="icon-bg bg-orange-light ion-edit"></i><span>Blog</span><i class="ion-record"></i></a>
-<a href="#" style="display:none;"><i class="icon-bg bg-pink-dark ion-ios-film-outline"></i><span>Videos</span><i class="ion-record"></i></a>
-<a href="#" style="display:none;"><i class="icon-bg bg-green-dark ion-ios-chatboxes-outline"></i><span>Contact</span><i class="ion-record"></i></a>
+<a href="#"><i class="icon-bg bg-orange-light ion-edit"></i><span>Blog</span><i class="ion-record"></i></a>
+<a href="#"><i class="icon-bg bg-pink-dark ion-ios-film-outline"></i><span>Videos</span><i class="ion-record"></i></a>
+<a href="#"><i class="icon-bg bg-green-dark ion-ios-chatboxes-outline"></i><span>Contact</span><i class="ion-record"></i></a>
 <a href="#" class="close-sidebar"><i class="icon-bg bg-red-light ion-android-close"></i><span>Close</span><i class="ion-record"></i></a>
 
 <em class="menu-divider">COPYRIGHT 2017<u class="copyright-year"></u>. ISLAMABAD GROUP</em>
@@ -210,14 +211,14 @@
 <div class="menu-options icon-background sidebar-menu">
 <em class="menu-divider">Social Networks</em>
 <a class="default-link" href="#"><i class="icon-bg facebook-bg ion-social-facebook"></i><span>Facebook</span><i class="ion-record"></i></a>
-<a class="default-link" href="#" style="display:none;"><i class="icon-bg twitter-bg ion-social-twitter"></i><span>Twitter</span><i class="ion-record"></i></a>
-<a class="default-link" href="#" style="display:none;"><i class="icon-bg google-bg ion-social-googleplus"></i><span>Google +</span><i class="ion-record"></i></a>
-<em class="menu-divider" style="display:none;">Get in touch with us</em>
+<a class="default-link" href="#"><i class="icon-bg twitter-bg ion-social-twitter"></i><span>Twitter</span><i class="ion-record"></i></a>
+<a class="default-link" href="#"><i class="icon-bg google-bg ion-social-googleplus"></i><span>Google +</span><i class="ion-record"></i></a>
+<em class="menu-divider">Get in touch with us</em>
 <a href="#"><i class="icon-bg mail-bg ion-email"></i><span>Email</span><i class="ion-record"></i></a>
 <a href="tel:+92 51 4845645"><i class="icon-bg phone-bg ion-ios-telephone"></i><span>Phone</span><i class="ion-record"></i></a>
-<a href="https://api.whatsapp.com/send?phone=12345678900" style="display:none;"><i class="icon-bg whatsapp-bg ion-social-whatsapp"></i><span>Whatsapp</span><i class="ion-record"></i></a>
-<em class="menu-divider" style="display:none;">NEWS AND SOCIAL FEED</em>
-<a class="default-link" href="#" style="display:none;"><i class="icon-bg pinterest-bg ion-social-pinterest-outline"></i><span>Pinterest</span><i class="ion-record"></i></a>
+<a href="https://api.whatsapp.com/send?phone=12345678900"><i class="icon-bg whatsapp-bg ion-social-whatsapp"></i><span>Whatsapp</span><i class="ion-record"></i></a>
+<em class="menu-divider">NEWS AND SOCIAL FEED</em>
+<a class="default-link" href="#"><i class="icon-bg pinterest-bg ion-social-pinterest-outline"></i><span>Pinterest</span><i class="ion-record"></i></a>
 <a class="default-link" href="#"><i class="icon-bg youtube-bg ion-social-youtube"></i><span>YouTube</span><i class="ion-record"></i></a>
 <em class="menu-divider">COPYRIGHT 2017 <u class="copyright-year"></u>. ISLAMABAD GROUP</em>
 </div>
@@ -229,20 +230,25 @@
 
 <div class="header header-logo-center header-dark">
 <a href="#" class="header-icon header-icon-1 hamburger-animated open-sidebar-left"></a>
-<a class="header-logo"></a>
+<a href="index.html" class="header-logo"></a>
 <a href="#" class="header-icon header-icon-4 open-sidebar-right"><i class="ion-ios-email-outline"></i></a>
 </div>
 <div id="page-content" class="page-content">
 <div id="page-content-scroll" class="header-clear"> 
 <div class="heading-strip bg-1">
-<h3>Order History</h3>
-<p></p>
-<i class="ion-person"></i>
+<h3>Products</h3>
+<p>Products Selection</p>
+<i class="ion-ios-cart"></i>
 <div class="overlay dark-overlay"></div>
 </div>
+<div class="store-product-socials full-bottom" id="pro_selection">
 
+
+</div>
 <div class="decoration decoration-margins"></div>
-<div class="content" id="drop">
+<div class="content">
+<div class="store-cart-1" id="drop">
+
 
 <div class="sk-circle">
   <div class="sk-circle1 sk-child"></div>
@@ -259,7 +265,9 @@
   <div class="sk-circle12 sk-child"></div>
 </div>
 
+
 </div>
+
 </div>
 <div class="decoration decoration-margins"></div>
 <div class="footer footer-dark">
@@ -307,8 +315,8 @@ Email
 </div>
 </div>
 
-<script type="text/javascript" src="scripts/jquery.min.js"></script>
 
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
 
 <script type="text/javascript">
 	
@@ -338,11 +346,14 @@ Email
 		});
 		if (window.location.toString().includes("?")) 
 	   {
-			var email = getUrlParameters("email", "", true);
-			$( "#drop" ).load( "http://islamabadchicken.com/order_history_app.php?email="+email);
-			$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php?email="+email);
-			$( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php?email="+email);
-			document.getElementById("index").href="index.html?email="+email;
+			var user_name 	 = getUrlParameters("user_name", "", true);
+			var s_id		 = getUrlParameters("s_id", "", true);
+			//$( "#drop" ).load( "http://islamabadchicken.com/del_com_app.php?user_name="+user_name+"&s_id="+s_id);
+			$( "#drop" ).load( "http://127.0.0.1:8888/islamabadchicken/del_com_app.php?user_name="+user_name+"&s_id="+s_id);
+			//alert(user_name);
+			$( "#sidebar" ).load( "http://islamabadchicken.com/sidebar_app.php?email="+user_name);
+			$( "#sidebar-sub-8" ).load( "http://islamabadchicken.com/sidebar_capp.php?email="+user_name);
+			//document.getElementById("index").href="indexd.html?email="+user_name+"&s_id="+s_id;
 	   }
 	   else
 	   {
@@ -353,6 +364,7 @@ Email
 	//};
 	
   </script>
+
 
 
 </body>

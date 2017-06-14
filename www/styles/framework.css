@@ -5722,7 +5722,7 @@ calendar*{display:block; overflow:hidden;}
 
 .store-cart-1 .cart-item h5{
     position:absolute;
-    width:35px;
+    /*width:35px;*/
     height:35px;
     position:absolute;
     line-height:35px;
